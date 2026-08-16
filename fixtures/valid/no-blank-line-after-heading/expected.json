@@ -1,0 +1,29 @@
+{
+  "description": "No blank line after the heading. A pure formatting difference with no parse consequence, so consumers must read it identically to the canonical spelling.",
+  "deck": {
+    "title": "Geology",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Mohs scale",
+      "frontBody": "",
+      "back": "- Talc is 1, diamond is 10\n- The scale is ordinal, not linear",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    },
+    {
+      "headingText": "Plate boundaries",
+      "frontBody": "",
+      "back": "- Divergent, convergent, transform",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

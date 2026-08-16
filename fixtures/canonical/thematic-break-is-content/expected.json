@@ -1,0 +1,21 @@
+{
+  "description": "Only an exact *** divides. The --- further down is back content, not a second separator, and must not be mistaken for one by a parser working from an AST.",
+  "deck": {
+    "title": "Typography",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Which rules are not front/back separators?",
+      "frontBody": "",
+      "back": "- `---` is a setext heading marker when it follows a text line\n- `___` and `* * *` and `****` are ordinary thematic breaks\n\n---\n\n- Only a line of exactly `***` separates front from back",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

@@ -1,0 +1,29 @@
+{
+  "description": "Two cards may share a front. A consumer must not refuse the file, or collapse them. Note that a writer of Anki packages will still merge cards identical in BOTH fields; these differ in their backs, so they stay two.",
+  "deck": {
+    "title": "Ambiguous words",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "bank",
+      "frontBody": "",
+      "back": "- The side of a river",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    },
+    {
+      "headingText": "bank",
+      "frontBody": "",
+      "back": "- A financial institution",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

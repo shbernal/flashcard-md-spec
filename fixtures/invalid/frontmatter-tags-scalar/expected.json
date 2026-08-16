@@ -1,0 +1,21 @@
+{
+  "description": "A scalar tags value is not read as tags. Obsidian stopped accepting this shape in 1.9, so reading it here would mean the vault and the flashcard tools disagree about the same file; the diagnostic is what keeps that from happening quietly.",
+  "deck": {
+    "title": "Orbital mechanics",
+    "titleSource": "heading",
+    "frontmatter": { "tags": "astronomy, orbits" },
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "What is a Hohmann transfer?",
+      "frontBody": "",
+      "back": "- The two-burn manoeuvre between coplanar circular orbits",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": [{ "code": "frontmatter-tags-not-a-sequence", "cardIndex": null }]
+}

@@ -1,0 +1,29 @@
+{
+  "description": "The shape a producer emits: frontmatter tags, a deck title, and bullet-list backs.",
+  "deck": {
+    "title": "French verbs",
+    "titleSource": "heading",
+    "frontmatter": { "tags": ["french", "verbs"] },
+    "fileTags": ["french", "verbs"],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "se rendre compte",
+      "frontBody": "",
+      "back": "- to realize, to become aware\n- reflexive, takes `de` before a noun",
+      "cardTags": [],
+      "tags": ["french", "verbs"],
+      "images": []
+    },
+    {
+      "headingText": "aboutir",
+      "frontBody": "",
+      "back": "- to succeed, to result in",
+      "cardTags": [],
+      "tags": ["french", "verbs"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Keys the specification does not define are user extensions. A consumer must ignore them without erroring, and must preserve them if it rewrites the file.",
+  "deck": {
+    "title": "Italian lesson 42",
+    "titleSource": "heading",
+    "frontmatter": { "type": "vocabulary", "source": "Assimil, lesson 42", "tags": ["italian"] },
+    "fileTags": ["italian"],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "il ragioniere",
+      "frontBody": "",
+      "back": "- accountant, book-keeper",
+      "cardTags": [],
+      "tags": ["italian"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

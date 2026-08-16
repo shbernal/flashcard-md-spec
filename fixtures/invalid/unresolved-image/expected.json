@@ -1,0 +1,21 @@
+{
+  "description": "The image path does not resolve: there is no .images directory beside this file. The card is still returned in full; the consumer reports the image rather than dropping it in silence.",
+  "deck": {
+    "title": "Cartography",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "What is a Mercator projection?",
+      "frontBody": "",
+      "back": "![A Mercator world map](./.images/mercator.png)\n\n- A cylindrical projection that preserves angles and inflates area with latitude",
+      "cardTags": [],
+      "tags": [],
+      "images": [{ "alt": "A Mercator world map", "src": "./.images/mercator.png" }]
+    }
+  ],
+  "diagnostics": [{ "code": "unresolved-image", "cardIndex": 0 }]
+}

@@ -1,0 +1,21 @@
+{
+  "description": "The four exclusions from the tag grammar, in one card: code spans, a trailing #, an all-numeric token, and the leading-digit token that is nonetheless valid.",
+  "deck": {
+    "title": "C and C sharp",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Which of these are tags?",
+      "frontBody": "",
+      "back": "- `#include <stdio.h>` is not a tag: it is in a code span, and it contains `<`\n- `C#` is not a tag: the `#` is trailing\n- #42 is not a tag: it has no non-numeric character\n- #1st-declension is a tag\n\n#grammar",
+      "cardTags": ["1st-declension", "grammar"],
+      "tags": ["1st-declension", "grammar"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

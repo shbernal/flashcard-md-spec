@@ -1,0 +1,21 @@
+{
+  "description": "Frontmatter is optional; absent, the file has no file-level tags.",
+  "deck": {
+    "title": "Binary trees",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "What is a binary tree?",
+      "frontBody": "",
+      "back": "- A tree where each node has at most two children\n- The children are the left child and the right child",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

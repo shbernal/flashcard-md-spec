@@ -1,0 +1,29 @@
+{
+  "description": "The ## heading is mandatory and is a card's whole identity, so a card with an empty heading cannot be kept. The consumer skips that unit, reports it, and still returns the two cards either side of it.",
+  "deck": {
+    "title": "Sloppy deck",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Who wrote the Aeneid?",
+      "frontBody": "",
+      "back": "- Virgil",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    },
+    {
+      "headingText": "Who wrote the Odyssey?",
+      "frontBody": "",
+      "back": "- Homer",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": [{ "code": "malformed-card-skipped", "cardIndex": null }]
+}

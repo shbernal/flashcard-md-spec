@@ -1,0 +1,21 @@
+{
+  "description": "A ### heading is card body content. It neither starts nor ends a card, and must not be dropped.",
+  "deck": {
+    "title": "Networking",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "The TCP handshake",
+      "frontBody": "",
+      "back": "### Sequence\n\n- SYN\n- SYN-ACK\n- ACK\n\n### Why three and not two\n\n- The second message has to be acknowledged as well",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

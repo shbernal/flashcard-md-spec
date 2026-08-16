@@ -1,0 +1,21 @@
+{
+  "description": "A tag above the *** still counts. The card is the unit that carries tags; the separator decides which Anki field content lands in, not which region tags are scanned.",
+  "deck": {
+    "title": "Spanish",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "el pretérito",
+      "frontBody": "#spanish/grammar\n\nConjugate this tense for a regular -ar verb.",
+      "back": "- hablé, hablaste, habló, hablamos, hablasteis, hablaron",
+      "cardTags": ["spanish/grammar"],
+      "tags": ["spanish/grammar"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

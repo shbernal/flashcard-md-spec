@@ -1,0 +1,21 @@
+{
+  "description": "Effective tags are the union of file and card tags, deduplicated; french appears at both levels and once in the result. Slashes nest.",
+  "deck": {
+    "title": "Nested tags",
+    "titleSource": "heading",
+    "frontmatter": { "tags": ["french"] },
+    "fileTags": ["french"],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "le subjonctif",
+      "frontBody": "",
+      "back": "- Mood used after expressions of doubt, will and emotion\n\n#french #grammar/mood",
+      "cardTags": ["french", "grammar/mood"],
+      "tags": ["french", "grammar/mood"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

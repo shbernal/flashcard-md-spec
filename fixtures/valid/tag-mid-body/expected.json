@@ -1,0 +1,21 @@
+{
+  "description": "A tags-only line before the body rather than after it. Canonical puts it last; consumers accept it anywhere in the card.",
+  "deck": {
+    "title": "Chemistry",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Name the noble gases.",
+      "frontBody": "",
+      "back": "#chemistry/inorganic\n\n- Helium, neon, argon\n- Krypton, xenon, radon",
+      "cardTags": ["chemistry/inorganic"],
+      "tags": ["chemistry/inorganic"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

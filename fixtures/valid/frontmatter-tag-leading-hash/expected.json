@@ -1,0 +1,21 @@
+{
+  "description": "A leading # on a frontmatter tag is accepted and stripped. Canonical omits it; the stripped form is what reaches the effective tag set.",
+  "deck": {
+    "title": "Orbital mechanics",
+    "titleSource": "heading",
+    "frontmatter": { "tags": ["#astronomy", "orbits"] },
+    "fileTags": ["astronomy", "orbits"],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "What is a Hohmann transfer?",
+      "frontBody": "",
+      "back": "- The two-burn manoeuvre between coplanar circular orbits",
+      "cardTags": [],
+      "tags": ["astronomy", "orbits"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

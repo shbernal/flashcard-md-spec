@@ -1,0 +1,21 @@
+{
+  "description": "An inline tag contributes a tag AND stays in the rendered text; only a line that is nothing but tags is hidden. Stripping the inline one would mangle the sentence into 'The group of motion'.",
+  "deck": {
+    "title": "Linguistics",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Which group takes an auxiliary in the perfect?",
+      "frontBody": "",
+      "back": "The #verbs group of motion takes être rather than avoir.\n\n#french",
+      "cardTags": ["verbs", "french"],
+      "tags": ["verbs", "french"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

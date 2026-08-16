@@ -1,0 +1,29 @@
+{
+  "description": "Prose between the deck title and the first ## belongs to no card. Dropping it is conformant, which is the one exception to the no-silent-discard rule.",
+  "deck": {
+    "title": "Thermodynamics",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": "These cards cover the first two laws only. The third law is in its own deck."
+  },
+  "cards": [
+    {
+      "headingText": "The first law",
+      "frontBody": "",
+      "back": "- Energy is conserved in a closed system",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    },
+    {
+      "headingText": "The second law",
+      "frontBody": "",
+      "back": "- The entropy of an isolated system never decreases",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

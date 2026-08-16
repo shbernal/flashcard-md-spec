@@ -1,0 +1,29 @@
+{
+  "description": "Local relative paths resolve against the deck file's directory; absolute URLs are equally legal. Alt text is SHOULD, so an empty alt is valid.",
+  "deck": {
+    "title": "Botany",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Leaf venation patterns",
+      "frontBody": "",
+      "back": "![Parallel and reticulate venation](./.images/venation.png)\n\n- Parallel venation is typical of monocots\n- Reticulate venation is typical of dicots",
+      "cardTags": [],
+      "tags": [],
+      "images": [{ "alt": "Parallel and reticulate venation", "src": "./.images/venation.png" }]
+    },
+    {
+      "headingText": "The Fibonacci spiral in phyllotaxis",
+      "frontBody": "",
+      "back": "![](https://example.org/img/phyllotaxis.png)\n\n- Leaf placement approximates the golden angle",
+      "cardTags": [],
+      "tags": [],
+      "images": [{ "alt": "", "src": "https://example.org/img/phyllotaxis.png" }]
+    }
+  ],
+  "diagnostics": []
+}

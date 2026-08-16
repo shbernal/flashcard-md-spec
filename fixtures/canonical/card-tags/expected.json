@@ -1,0 +1,21 @@
+{
+  "description": "Canonical card tags: a tags-only line at the end of the body. It contributes tags and is not rendered.",
+  "deck": {
+    "title": "Mixed topics",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Amdahl's law",
+      "frontBody": "",
+      "back": "- Speedup is bounded by the fraction of the work that stays serial\n\n#concurrency #performance",
+      "cardTags": ["concurrency", "performance"],
+      "tags": ["concurrency", "performance"],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

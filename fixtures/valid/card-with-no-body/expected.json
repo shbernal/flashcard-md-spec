@@ -1,0 +1,29 @@
+{
+  "description": "A card with a front and no body is valid; an Anki note with an empty field is legitimate. A consumer must not skip it or error.",
+  "deck": {
+    "title": "Placeholders",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "un mot à définir",
+      "frontBody": "",
+      "back": "",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    },
+    {
+      "headingText": "la définition suit",
+      "frontBody": "",
+      "back": "- Elle arrive au prochain passage",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

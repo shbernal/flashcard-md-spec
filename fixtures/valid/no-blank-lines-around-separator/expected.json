@@ -1,0 +1,21 @@
+{
+  "description": "Canonical form puts a blank line either side of the ***; neither is required for the separator to be recognized.",
+  "deck": {
+    "title": "Optics",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "State Snell's law and name its terms.",
+      "frontBody": "Give the equation, then define each symbol.",
+      "back": "- n1 sin(t1) = n2 sin(t2)\n- n is the refractive index, t the angle from the normal",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

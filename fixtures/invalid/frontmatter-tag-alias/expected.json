@@ -1,0 +1,21 @@
+{
+  "description": "The singular tag key was removed from Obsidian in 1.9. It is not read as tags, and it is not silently ignored either: an unknown key is legal, but this particular one is a mistake worth naming.",
+  "deck": {
+    "title": "Orbital mechanics",
+    "titleSource": "heading",
+    "frontmatter": { "tag": ["astronomy"] },
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "What is a Hohmann transfer?",
+      "frontBody": "",
+      "back": "- The two-burn manoeuvre between coplanar circular orbits",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": [{ "code": "frontmatter-tags-not-a-sequence", "cardIndex": null }]
+}

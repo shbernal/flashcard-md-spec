@@ -1,0 +1,21 @@
+{
+  "description": "A line of exactly *** divides front from back; the heading and the text above it are both front.",
+  "deck": {
+    "title": "Extreme programming",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "YAGNI",
+      "frontBody": "Describe this acronym, and say why it matters.",
+      "back": "- \"You aren't gonna need it\"\n- A principle of extreme programming: do not add functionality until it is\n  actually needed",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

@@ -1,0 +1,205 @@
+{
+  "specVersion": "1.0",
+  "diagnosticCodes": [
+    "stray-h1",
+    "frontmatter-tags-not-a-sequence",
+    "preamble-tag",
+    "tag-sanitized",
+    "unresolved-image",
+    "malformed-card-skipped",
+    "unrepresentable-content"
+  ],
+  "tiers": {
+    "canonical": "Producers MUST emit only this. Consumers MUST parse it.",
+    "valid": "Consumers MUST parse it correctly. Producers MUST NOT emit it.",
+    "invalid": "Consumers MUST salvage what they can and raise the listed diagnostics. Producers MUST reject it."
+  },
+  "cases": [
+    {
+      "id": "canonical/card-tags",
+      "tier": "canonical",
+      "description": "Canonical card tags: a tags-only line at the end of the body. It contributes tags and is not rendered.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/code-fence",
+      "tier": "canonical",
+      "description": "A fenced code block is ordinary body content and is preserved verbatim, including its language tag.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/deeper-headings",
+      "tier": "canonical",
+      "description": "A ### heading is card body content. It neither starts nor ends a card, and must not be dropped.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/file-and-card-tags",
+      "tier": "canonical",
+      "description": "Effective tags are the union of file and card tags, deduplicated; french appears at both levels and once in the result. Slashes nest.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/front-back-separator",
+      "tier": "canonical",
+      "description": "A line of exactly *** divides front from back; the heading and the text above it are both front.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/images",
+      "tier": "canonical",
+      "description": "Local relative paths resolve against the deck file's directory; absolute URLs are equally legal. Alt text is SHOULD, so an empty alt is valid.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/minimal-deck",
+      "tier": "canonical",
+      "description": "The shape a producer emits: frontmatter tags, a deck title, and bullet-list backs.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/nested-bullets",
+      "tier": "canonical",
+      "description": "Nested list items are ordinary CommonMark and must be preserved. A line scanner that only matches a top-level marker drops them silently.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/no-deck-title",
+      "tier": "canonical",
+      "description": "The deck title is optional. A consumer needing a name may fall back to the filename, but titleSource records that the file declared none.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/no-frontmatter",
+      "tier": "canonical",
+      "description": "Frontmatter is optional; absent, the file has no file-level tags.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/preamble",
+      "tier": "canonical",
+      "description": "Prose between the deck title and the first ## belongs to no card. Dropping it is conformant, which is the one exception to the no-silent-discard rule.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/separator-in-code-fence",
+      "tier": "canonical",
+      "description": "The separator is only recognized at the top level. The *** inside the fenced block is content, so the first *** above it is the one that divides, and the card is not split a second time.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/tag-in-code-span",
+      "tier": "canonical",
+      "description": "The four exclusions from the tag grammar, in one card: code spans, a trailing #, an all-numeric token, and the leading-digit token that is nonetheless valid.",
+      "diagnostics": []
+    },
+    {
+      "id": "canonical/thematic-break-is-content",
+      "tier": "canonical",
+      "description": "Only an exact *** divides. The --- further down is back content, not a second separator, and must not be mistaken for one by a parser working from an AST.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/card-with-no-body",
+      "tier": "valid",
+      "description": "A card with a front and no body is valid; an Anki note with an empty field is legitimate. A consumer must not skip it or error.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/duplicate-fronts",
+      "tier": "valid",
+      "description": "Two cards may share a front. A consumer must not refuse the file, or collapse them. Note that a writer of Anki packages will still merge cards identical in BOTH fields; these differ in their backs, so they stay two.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/frontmatter-tag-leading-hash",
+      "tier": "valid",
+      "description": "A leading # on a frontmatter tag is accepted and stripped. Canonical omits it; the stripped form is what reaches the effective tag set.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/no-blank-line-after-heading",
+      "tier": "valid",
+      "description": "No blank line after the heading. A pure formatting difference with no parse consequence, so consumers must read it identically to the canonical spelling.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/no-blank-lines-around-separator",
+      "tier": "valid",
+      "description": "Canonical form puts a blank line either side of the ***; neither is required for the separator to be recognized.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/tag-in-front-region",
+      "tier": "valid",
+      "description": "A tag above the *** still counts. The card is the unit that carries tags; the separator decides which Anki field content lands in, not which region tags are scanned.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/tag-inline-in-prose",
+      "tier": "valid",
+      "description": "An inline tag contributes a tag AND stays in the rendered text; only a line that is nothing but tags is hidden. Stripping the inline one would mangle the sentence into 'The group of motion'.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/tag-mid-body",
+      "tier": "valid",
+      "description": "A tags-only line before the body rather than after it. Canonical puts it last; consumers accept it anywhere in the card.",
+      "diagnostics": []
+    },
+    {
+      "id": "valid/unknown-frontmatter-keys",
+      "tier": "valid",
+      "description": "Keys the specification does not define are user extensions. A consumer must ignore them without erroring, and must preserve them if it rewrites the file.",
+      "diagnostics": []
+    },
+    {
+      "id": "invalid/empty-card-heading",
+      "tier": "invalid",
+      "description": "The ## heading is mandatory and is a card's whole identity, so a card with an empty heading cannot be kept. The consumer skips that unit, reports it, and still returns the two cards either side of it.",
+      "diagnostics": [
+        "malformed-card-skipped"
+      ]
+    },
+    {
+      "id": "invalid/frontmatter-tag-alias",
+      "tier": "invalid",
+      "description": "The singular tag key was removed from Obsidian in 1.9. It is not read as tags, and it is not silently ignored either: an unknown key is legal, but this particular one is a mistake worth naming.",
+      "diagnostics": [
+        "frontmatter-tags-not-a-sequence"
+      ]
+    },
+    {
+      "id": "invalid/frontmatter-tags-scalar",
+      "tier": "invalid",
+      "description": "A scalar tags value is not read as tags. Obsidian stopped accepting this shape in 1.9, so reading it here would mean the vault and the flashcard tools disagree about the same file; the diagnostic is what keeps that from happening quietly.",
+      "diagnostics": [
+        "frontmatter-tags-not-a-sequence"
+      ]
+    },
+    {
+      "id": "invalid/preamble-tag",
+      "tier": "invalid",
+      "description": "A bare tag above the first ## has no meaning in version 1: it is neither a file tag nor a card tag. Dropping it silently would be the failure mode the diagnostic exists to prevent.",
+      "diagnostics": [
+        "preamble-tag"
+      ]
+    },
+    {
+      "id": "invalid/stray-h1",
+      "tier": "invalid",
+      "description": "A second # ends the card before it and has no defined meaning. Content between it and the next ## belongs to no card. The consumer keeps both real cards and reports the stray heading.",
+      "diagnostics": [
+        "stray-h1"
+      ]
+    },
+    {
+      "id": "invalid/unresolved-image",
+      "tier": "invalid",
+      "description": "The image path does not resolve: there is no .images directory beside this file. The card is still returned in full; the consumer reports the image rather than dropping it in silence.",
+      "diagnostics": [
+        "unresolved-image"
+      ]
+    }
+  ]
+}

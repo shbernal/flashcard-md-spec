@@ -1,0 +1,21 @@
+{
+  "description": "The deck title is optional. A consumer needing a name may fall back to the filename, but titleSource records that the file declared none.",
+  "deck": {
+    "title": null,
+    "titleSource": "none",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Kolmogorov complexity",
+      "frontBody": "",
+      "back": "- The length of the shortest program that outputs a given string\n- Uncomputable in general",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

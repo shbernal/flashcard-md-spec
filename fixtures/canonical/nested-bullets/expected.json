@@ -1,0 +1,21 @@
+{
+  "description": "Nested list items are ordinary CommonMark and must be preserved. A line scanner that only matches a top-level marker drops them silently.",
+  "deck": {
+    "title": "Data structures",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Hash table collision strategies",
+      "frontBody": "",
+      "back": "- Separate chaining\n  - Each bucket holds a list\n  - Degrades to a linear scan when the table is full\n- Open addressing\n  - Linear probing\n  - Quadratic probing",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

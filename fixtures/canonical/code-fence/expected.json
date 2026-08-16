@@ -1,0 +1,21 @@
+{
+  "description": "A fenced code block is ordinary body content and is preserved verbatim, including its language tag.",
+  "deck": {
+    "title": "Python",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "How do you swap two variables?",
+      "frontBody": "",
+      "back": "```python\na, b = b, a\n```\n\n- Tuple packing and unpacking, no temporary needed",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

@@ -1,0 +1,21 @@
+{
+  "description": "The separator is only recognized at the top level. The *** inside the fenced block is content, so the first *** above it is the one that divides, and the card is not split a second time.",
+  "deck": {
+    "title": "Markdown trivia",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "How is a thematic break written?",
+      "frontBody": "",
+      "back": "Three ways, all equivalent:\n\n```markdown\n***\n---\n___\n```\n\n- All three render as a horizontal rule",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": []
+}

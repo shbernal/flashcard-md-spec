@@ -1,0 +1,29 @@
+{
+  "description": "A second # ends the card before it and has no defined meaning. Content between it and the next ## belongs to no card. The consumer keeps both real cards and reports the stray heading.",
+  "deck": {
+    "title": "Roman history",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": null
+  },
+  "cards": [
+    {
+      "headingText": "Who was the first emperor?",
+      "frontBody": "",
+      "back": "- Augustus, from 27 BC",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    },
+    {
+      "headingText": "Who was Diocletian?",
+      "frontBody": "",
+      "back": "- The emperor who introduced the tetrarchy",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": [{ "code": "stray-h1", "cardIndex": null }]
+}

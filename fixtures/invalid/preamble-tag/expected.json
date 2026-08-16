@@ -1,0 +1,21 @@
+{
+  "description": "A bare tag above the first ## has no meaning in version 1: it is neither a file tag nor a card tag. Dropping it silently would be the failure mode the diagnostic exists to prevent.",
+  "deck": {
+    "title": "Mycology",
+    "titleSource": "heading",
+    "frontmatter": {},
+    "fileTags": [],
+    "preamble": "#fungi #biology"
+  },
+  "cards": [
+    {
+      "headingText": "What is a mycorrhiza?",
+      "frontBody": "",
+      "back": "- A symbiosis between a fungus and a plant root",
+      "cardTags": [],
+      "tags": [],
+      "images": []
+    }
+  ],
+  "diagnostics": [{ "code": "preamble-tag", "cardIndex": null }]
+}
