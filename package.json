@@ -21,6 +21,7 @@
   "files": [
     "SPEC.md",
     "fixtures",
+    "examples",
     "README.md",
     "LICENSE"
   ],
@@ -28,6 +29,7 @@
   "exports": {
     "./manifest.json": "./fixtures/manifest.json",
     "./fixtures/*": "./fixtures/*",
+    "./examples/*": "./examples/*",
     "./SPEC.md": "./SPEC.md"
   },
   "scripts": {

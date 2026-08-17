@@ -23,6 +23,9 @@ tags:
 - **[`SPEC.md`](./SPEC.md)** — the normative document.
 - **[`fixtures/`](./fixtures/README.md)** — the corpus, indexed by
   `fixtures/manifest.json`.
+- **[`examples/learn-flashcard-md.md`](./examples/learn-flashcard-md.md)** — a
+  self-teaching deck: its cards teach the format it is written in. Non-normative;
+  import it into a flashcard app, or read the source next to `SPEC.md`.
 
 ## Why this exists
 
@@ -42,7 +45,7 @@ pnpm add -D @shbernal/flashcard-md-spec
 ```
 
 The package contains **no parser** — deliberately. It ships `SPEC.md`,
-`fixtures/`, and nothing that runs.
+`fixtures/`, the example deck, and nothing that runs.
 
 Read [`fixtures/README.md`](./fixtures/README.md) for the case format. In short,
 a consumer parses `input.md`, maps its model to the fixture shape through a
