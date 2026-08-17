@@ -1,0 +1,102 @@
+name: Publish to npm
+
+# Trusted publishing (OIDC) is configured on npmjs.com against this repository
+# and this file's path. Renaming this file breaks that connection, so it stays
+# at .github/workflows/publish.yml.
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-npm-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish @shbernal/flashcard-md-spec
+    if: github.repository == 'shbernal/flashcard-md-spec'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - name: Ensure npm supports trusted publishing
+        run: |
+          npm install -g npm@latest
+          npm --version
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # The same gates CI runs. A release must not publish a corpus that the
+      # check script would reject.
+      - name: Check the corpus
+        run: pnpm run check
+
+      - name: Test
+        run: pnpm test
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Check formatting
+        run: pnpm run format
+
+      - name: Verify the release tag matches package.json
+        if: github.event_name == 'release'
+        run: |
+          PACKAGE_VERSION="$(node -p "require('./package.json').version")"
+
+          if [ "${{ github.ref_name }}" != "v$PACKAGE_VERSION" ] && [ "${{ github.ref_name }}" != "$PACKAGE_VERSION" ]; then
+            echo "::error::Release tag '${{ github.ref_name }}' does not match package version '$PACKAGE_VERSION'."
+            exit 1
+          fi
+
+      # SPEC.md carries major.minor and package.json adds the patch digit, so
+      # the two agree on everything left of the last dot or the corpus is
+      # shipping under a specification version it does not match.
+      - name: Verify the package version agrees with SPEC.md
+        run: |
+          PACKAGE_VERSION="$(node -p "require('./package.json').version")"
+          SPEC_VERSION="$(node -p "require('./fixtures/manifest.json').specVersion")"
+
+          case "$PACKAGE_VERSION" in
+            "$SPEC_VERSION".*) ;;
+            *)
+              echo "::error::package.json version '$PACKAGE_VERSION' is not a patch of SPEC.md version '$SPEC_VERSION'."
+              exit 1
+              ;;
+          esac
+
+      - name: Verify the version is unpublished
+        run: |
+          PACKAGE_NAME="$(node -p "require('./package.json').name")"
+          PACKAGE_VERSION="$(node -p "require('./package.json').version")"
+
+          if npm view "$PACKAGE_NAME@$PACKAGE_VERSION" version >/dev/null 2>&1; then
+            echo "::error::$PACKAGE_NAME@$PACKAGE_VERSION is already published on npm."
+            exit 1
+          fi
+
+      - name: Verify the package contents
+        run: npm pack --dry-run --ignore-scripts
+
+      - name: Publish to npm
+        run: npm publish --access public --provenance --ignore-scripts

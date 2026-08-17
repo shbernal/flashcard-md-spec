@@ -1,11 +1,10 @@
 {
   "name": "@shbernal/flashcard-md-spec",
-  "version": "0.0.1",
-  "description": "A specification for writing flashcards in Markdown, with a conformance fixture corpus",
+  "version": "1.0.0",
+  "description": "A specification for writing flashcards in Markdown, with a conformance fixture corpus.",
   "keywords": [
     "anki",
     "conformance",
-    "fixtures",
     "flashcards",
     "markdown",
     "obsidian",
