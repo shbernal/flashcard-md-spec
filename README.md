@@ -41,7 +41,7 @@ becomes a failing test in whichever repository is wrong.
 ## Using it
 
 ```bash
-pnpm add -D @shbernal/flashcard-md-spec
+pnpm add -D flashcard-md-spec
 ```
 
 The package contains **no parser** — deliberately. It ships `SPEC.md`,

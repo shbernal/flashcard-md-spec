@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   publish:
-    name: Publish @shbernal/flashcard-md-spec
+    name: Publish flashcard-md-spec
     if: github.repository == 'shbernal/flashcard-md-spec'
     runs-on: ubuntu-latest
 

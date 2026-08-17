@@ -9,7 +9,7 @@
   worked around downstream
 - the only executable thing is `scripts/check-corpus.mjs`, which validates the
   corpus — it is not a parser and must not grow into one
-- published as `@shbernal/flashcard-md-spec` so implementations can depend on it
+- published as `flashcard-md-spec` so implementations can depend on it
 
 ## The One Rule That Breaks Everything
 
