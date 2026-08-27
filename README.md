@@ -58,7 +58,7 @@ everything under `invalid/`.
 | Project | Class |
 | --- | --- |
 | [`pdfanki`](https://github.com/shbernal/pdfanki) | producer |
-| [`mdanki`](https://github.com/shbernal/mdanki) | consumer |
+| [`@ankimd/core`](https://github.com/shbernal/ankimd) | consumer, producer |
 | `leitner` | consumer |
 
 A **producer** must emit canonical form only. A **consumer** must parse anything

@@ -79,9 +79,9 @@ configured to skip this directory; keep it that way.
 ### What is deliberately absent
 
 No rendered HTML, and no AST. Those are the two shapes that would force
-implementations to converge on something this format does not govern. `mdanki`'s
-Markdown-to-HTML step, for instance, is asserted in `mdanki`'s own suite, where
-it belongs.
+implementations to converge on something this format does not govern.
+`@ankimd/core`'s Markdown-to-HTML step, for instance, is asserted in that
+package's own suite, where it belongs.
 
 ## Two diagnostics the corpus cannot cover
 
