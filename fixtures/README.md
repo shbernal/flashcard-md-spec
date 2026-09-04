@@ -74,7 +74,9 @@ configured to skip this directory; keep it that way.
   broken out so that a bug in the union is distinguishable from a bug in tag
   scanning.
 - `diagnostics` is an unordered set. Compare by `{code, cardIndex}` and **never
-  by message text** — messages are each implementation's own.
+  by message text** — messages are each implementation's own. An implementation that also
+  reports a source line (`SPEC.md` §8) is not compared on it; this shape has no
+  place to put one.
 
 ### What is deliberately absent
 

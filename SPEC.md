@@ -1,6 +1,6 @@
 # Flashcard Markdown
 
-**Version 1.0**
+**Version 1.1**
 
 A specification for writing flashcards in Markdown files.
 
@@ -10,7 +10,7 @@ implementations agree on the cases where "nearly" is not good enough.
 
 ## Status of this document
 
-Version 1.0. The conformance corpus in `fixtures/` is normative alongside this
+Version 1.1. The conformance corpus in `fixtures/` is normative alongside this
 prose: where the two disagree, that is a bug in one of them, and it is reported
 against this repository rather than resolved locally by an implementation.
 
@@ -387,6 +387,24 @@ The version 1 code list is closed:
 | `unresolved-image` | An image could not be resolved or displayed (§7). |
 | `malformed-card-skipped` | A tier-3 unit was skipped so the rest of the file could be read (§3.2). |
 | `unrepresentable-content` | Catch-all for §3.3. Carries a free-form `detail`. |
+
+### Where a diagnostic points
+
+`cardIndex` is the card the diagnostic belongs to, or `null` when it is
+file-level. That is the only location version 1 requires, and `{code, cardIndex}`
+is what the corpus compares.
+
+An implementation MAY also carry `line`: the 1-based line of the source file
+where the departure begins, counted from the first line of the file, frontmatter
+included. It is absent rather than `0` or `null` where there is no such line.
+`tag-sanitized` and `unrepresentable-content` are raised at a conversion boundary
+(§6.5, §3.3), about a value rather than about a place in a file.
+
+Naming the field here is what stops four implementations from inventing four
+spellings of it. It is not a requirement: a consumer that omits `line` conforms,
+and the corpus does not assert it either way. Where a producer's error message
+points is a quality-of-implementation matter, and nothing in a Markdown file can
+be compared against it.
 
 **Severity is a function of conformance class, not a property of the code.** The
 same code is an error for a producer and a warning for a consumer. That is §3.1's

@@ -1,6 +1,6 @@
 {
   "name": "flashcard-md-spec",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A specification for writing flashcards in Markdown, with a conformance fixture corpus.",
   "keywords": [
     "anki",
