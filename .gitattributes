@@ -1,0 +1,5 @@
+# The corpus is asserted byte for byte: every text field in an expected.json is a
+# literal slice of the input.md beside it, and the check script requires exactly
+# one trailing newline. A CRLF checkout breaks both, and it breaks them silently
+# enough to look like a corpus bug rather than a checkout. LF on every platform.
+* text=auto eol=lf

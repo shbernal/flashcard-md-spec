@@ -1,34 +1,51 @@
 name: CI
 
 on:
+  pull_request:
+    branches: [master]
   push:
     branches: [master]
-  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   check:
-    name: Check the corpus
-    runs-on: ubuntu-latest
+    name: Check the corpus (${{ matrix.os }}, Node ${{ matrix.node-version }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [24, 26]
+        # One Windows job, because the corpus is the one thing here that a
+        # checkout can break: expected.json holds literal slices of its input.md,
+        # and a CRLF working tree would fail every one of them. .gitattributes
+        # pins LF, and this is what proves it still does.
+        include:
+          - os: windows-latest
+            node-version: 24
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v5
-
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v7
         with:
-          node-version: 24
-          cache: pnpm
+          node-version: ${{ matrix.node-version }}
+
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare "$(node -p "require('./package.json').packageManager")" --activate
+          pnpm --version
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
