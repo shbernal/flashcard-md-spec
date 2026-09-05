@@ -60,7 +60,7 @@ only in what they are obliged to do with input that departs from it.
 
 | Class | Obligation |
 | --- | --- |
-| **Producer** | MUST emit canonical form only. SHOULD fail loudly rather than emit non-canonical output. |
+| **Producer** | MUST use the canonical spelling of every construct that has one. SHOULD fail loudly rather than emit a non-canonical spelling. |
 | **Consumer** | MUST correctly parse anything valid. MUST NOT refuse to load a file because one card is malformed. |
 
 ### 3.2 Tiers
@@ -68,11 +68,26 @@ only in what they are obliged to do with input that departs from it.
 The grammar defines three tiers of input.
 
 1. **Canonical** — the single blessed spelling of each construct. Producers MUST
-   emit only this. Consumers MUST parse it.
+   use it. Consumers MUST parse it.
 2. **Valid** — a superset of canonical. Consumers MUST parse it **correctly**,
-   not merely tolerate it. Producers MUST NOT emit it.
+   not merely tolerate it. Where a construct has a canonical spelling, producers
+   MUST emit that spelling rather than this one.
 3. **Everything else** — consumers MUST salvage what they can, skip what they
    cannot, and surface a diagnostic. Producers reject it.
+
+**The tier 2 producer obligation covers spellings, and nothing else.** It binds
+where this document names a canonical form — §5.3, §5.4, §6.3 and §6.4. Valid
+input that is not an alternative spelling of anything has no canonical form to be
+rewritten into, and the section defining it says what a producer owes it instead:
+unknown frontmatter keys MUST be preserved (§4.1), and degenerate cards MAY be
+refused (§5.5).
+
+The unscoped reading — *producers MUST NOT emit anything from tier 2* — is
+unsatisfiable rather than merely strict, which is why the scope is written down.
+The only way to canonicalize a duplicate front is to rename a heading, and that
+moves card identity (§5.2). The only way to canonicalize an unknown frontmatter
+key is to delete it, and §4.1 calls that a silent-discard defect. A rule whose
+sole remedy another rule forbids is one no producer can conform to.
 
 "Degrade gracefully" is otherwise unfalsifiable, so tier 3 is defined
 concretely: **salvage the rest of the file, skip the bad unit, say so.** Never

@@ -88,9 +88,10 @@ rendered.
 ***
 
 1. **Canonical** — the single blessed spelling of each construct. Producers
-   emit only this.
+   use it.
 2. **Valid** — a superset consumers must parse *correctly*, not merely
-   tolerate. Producers must not emit it.
+   tolerate. Where a construct has a canonical spelling, producers emit that
+   instead.
 3. **Everything else** — salvage the rest of the file, skip the bad unit,
    raise a diagnostic.
 

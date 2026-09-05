@@ -61,8 +61,9 @@ everything under `invalid/`.
 | [`@ankimd/core`](https://github.com/shbernal/ankimd) | consumer, producer |
 | `leitner` | consumer |
 
-A **producer** must emit canonical form only. A **consumer** must parse anything
-valid and must never refuse a whole file over one bad card. See `SPEC.md` §3.
+A **producer** must emit the canonical spelling of every construct that has one.
+A **consumer** must parse anything valid and must never refuse a whole file over
+one bad card. See `SPEC.md` §3.
 
 ## Versioning
 

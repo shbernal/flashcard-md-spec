@@ -3,10 +3,13 @@
 Each case is a directory holding `input.md` and `expected.json`. Cases are
 grouped by the tier they exercise:
 
-- `canonical/` — the blessed spelling. Producers MUST emit only this; consumers
-  MUST parse it.
+- `canonical/` — the blessed spelling. Producers MUST use it; consumers MUST
+  parse it.
 - `valid/` — non-canonical but valid. Consumers MUST parse it **correctly**;
-  producers MUST NOT emit it.
+  where the construct has a canonical spelling, producers MUST emit that instead.
+  The obligation covers spellings only — not the degenerate cards of `SPEC.md`
+  §5.5, nor the extension keys of §4.1, which have no canonical form to be
+  rewritten into. See §3.2.
 - `invalid/` — consumers MUST salvage what they can and raise the listed
   diagnostics; producers MUST reject it.
 

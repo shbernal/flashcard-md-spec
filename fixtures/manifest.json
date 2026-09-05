@@ -10,8 +10,8 @@
     "unrepresentable-content"
   ],
   "tiers": {
-    "canonical": "Producers MUST emit only this. Consumers MUST parse it.",
-    "valid": "Consumers MUST parse it correctly. Producers MUST NOT emit it.",
+    "canonical": "Producers MUST use it. Consumers MUST parse it.",
+    "valid": "Consumers MUST parse it correctly. Where the construct has a canonical spelling, producers MUST emit that instead; the obligation covers spellings only, see SPEC.md §3.2.",
     "invalid": "Consumers MUST salvage what they can and raise the listed diagnostics. Producers MUST reject it."
   },
   "cases": [
