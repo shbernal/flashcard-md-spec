@@ -322,6 +322,13 @@ tags:
 ---
 ```
 
+**Canonical:** the tag written bare. **Valid:** a leading `#`, which is stripped
+on read. Canonical omits it because the stripped form is what reaches the
+effective tag set, so writing the `#` stores a character no consumer ever reads
+back. This is a spelling difference in the sense of §3.2, and it is stated here
+in the same form as §5.3, §5.4 and §6.3 so that a producer scanning for the
+canonical spellings finds all four.
+
 A `tags` value that is not a block sequence MUST NOT be read as tags, and MUST
 raise `frontmatter-tags-not-a-sequence`. The same applies to the key `tag`.
 
