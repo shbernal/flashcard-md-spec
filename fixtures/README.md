@@ -8,8 +8,8 @@ grouped by the tier they exercise:
 - `valid/` — non-canonical but valid. Consumers MUST parse it **correctly**;
   where the construct has a canonical spelling, producers MUST emit that instead.
   The obligation covers spellings only — not the degenerate cards of `SPEC.md`
-  §5.5, nor the extension keys of §4.1, which have no canonical form to be
-  rewritten into. See §3.2.
+  §5.5, the extension keys of §4.1, nor a tag written inside a sentence (§6.3),
+  which have no canonical form to be rewritten into. See §3.2.
 - `invalid/` — consumers MUST salvage what they can and raise the listed
   diagnostics; producers MUST reject it.
 

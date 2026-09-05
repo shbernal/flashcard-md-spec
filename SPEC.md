@@ -80,14 +80,18 @@ where this document names a canonical form — §5.3, §5.4, §6.3 and §6.4. Va
 input that is not an alternative spelling of anything has no canonical form to be
 rewritten into, and the section defining it says what a producer owes it instead:
 unknown frontmatter keys MUST be preserved (§4.1), and degenerate cards MAY be
-refused (§5.5).
+refused (§5.5). §6.3 falls on both sides of this line: a tags-only line has a
+canonical position, but a tag embedded in prose has none, because the same
+section requires it be rendered where it was written.
 
 The unscoped reading — *producers MUST NOT emit anything from tier 2* — is
 unsatisfiable rather than merely strict, which is why the scope is written down.
 The only way to canonicalize a duplicate front is to rename a heading, and that
 moves card identity (§5.2). The only way to canonicalize an unknown frontmatter
-key is to delete it, and §4.1 calls that a silent-discard defect. A rule whose
-sole remedy another rule forbids is one no producer can conform to.
+key is to delete it, and §4.1 calls that a silent-discard defect. The only way to
+canonicalize a tag inside a sentence is to lift it onto a line of its own, and
+§6.3 requires it stay rendered in place. A rule whose sole remedy another rule
+forbids is one no producer can conform to.
 
 "Degrade gracefully" is otherwise unfalsifiable, so tier 3 is defined
 concretely: **salvage the rest of the file, skip the bad unit, say so.** Never
